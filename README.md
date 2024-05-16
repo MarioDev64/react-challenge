@@ -1,14 +1,71 @@
-# DO NOT PULL TO THIS REPOSITORY
-### react-challenge
+# React + TypeScript + Vite
 
-1. Create a fork of this public repository https://github.com/sebasworkana/react-challenge.git on your own repository, and push it to a branch called react-challenge and then send a PR to your main branch, finally give us access to this github user sebasworkana.
-2. The main challenge is that you create a Page with the following Style and format.
-[![React-Challenge.png](https://i.postimg.cc/nrNG2p2R/React-Challenge.png)](https://postimg.cc/30CGJMPm)
-3. You need to enumerate all Periodic table of the elements on CSS class and make use of it, matching words in First name and last name “Highlighting” them as in the image.
-4. First, install “react-redux”, then use the useDispatch and useSelector react-redux hooks in the components.
-5. For this challenge use redux-thunk in it. Moreover, use the react-redux hooks to give a better impression and avoid older techniques. Share data among components without using props.
-6. Is mandatory to use linter like ESLINT
-7. Create npm scripts to run project and make sure to create a readme with instructions to
-run project
-8. Will be valuable if you can create Docker compose file to run all environment
-9. Use github pages to host web app and test
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+
+Currently, two official plugins are available:
+
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+
+## Contents
+
+-   [Getting started](#getting-started)
+-   [How use Linter](#for-linter)
+-   [Expanding the ESLint configuration](#expanding-the-eslint-configuration)
+
+---
+
+## Getting Started
+
+First, install all necessary dependencies:
+
+```bash
+npm install
+# or
+yarn install
+```
+
+Then, run the development server:
+
+```bash
+npm run dev
+# or
+yarn dev
+```
+
+Open [http://localhost:5173](http://localhost:5173) with your browser to see the result.
+
+You can start editing the page by modifying `src/pages/index.js`. The page auto-updates as you edit the file.
+
+
+## For Linter
+
+This project have default nextjs linter configured, you can execute it in this way:
+
+```bash
+yarn lint
+```
+
+
+## Expanding the ESLint configuration
+
+If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+
+- Configure the top-level `parserOptions` property like this:
+
+```js
+export default {
+  // other rules...
+  parserOptions: {
+    ecmaVersion: 'latest',
+    sourceType: 'module',
+    project: ['./tsconfig.json', './tsconfig.node.json'],
+    tsconfigRootDir: __dirname,
+  },
+}
+```
+
+- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
+- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
+- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
